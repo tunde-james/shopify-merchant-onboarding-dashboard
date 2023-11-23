@@ -76,15 +76,15 @@ h6 {
 }
 
 /* CSS Variables */
-:root {
+html {
   /* Background Colors*/
-  --primary-background: hsl(0, 0%, 100%);
-  --secondary-background: hsl(0, 0%, 94.5%);
+  --primary-background: #ffffff;
+  --secondary-background: #f1f1f1;
 
   /* Fonts Colors */
-  --primary-text: hsl(0, 0%, 89%);
-  --secondary-text: hsl(0, 0%, 38%);
-  --tertiary-text: hsl(216, 18.4%, 34.1%);
+  --primary-text: #e3e3e3;
+  --secondary-text: #616161;
+  --tertiary-text: #475467;
 
   /* Navigation Colors */
   --nav-50: hsl(285, 2%, 39.2%);
@@ -101,8 +101,120 @@ h6 {
   --hover: hsl(0, 0%, 96.9%);
   --pressed: hsl(0, 0%, 94.1%);
   --focused: hsl(214, 100%, 41.4%);
+
+  --accent: hsl(153, 96.1%, 59.8%);
+
+  /* Fonts Family*/
+  --inter-font: 'Inter', sans-serif;
+
+  /* Font Sizes */
+  --etra-small: 0.75rem; // 12px
+  --small: 0.8125rem; // 13px
+  --medium: 0.875rem; // 14px
+
+  /* Font Weights */
+  --normal: 400;
+  --medium: 500;
+  --semi-bold: 600;
 }
 
 body {
-  background-color: red;
+  font-family: var(--inter-font);
+}
+
+.navbar {
+  background-color: var(--nav-300);
+  color: var(--primary-text);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 12px;
+  padding-inline: 16px;
+}
+
+.navbar__logo {
+  text-decoration: none;
+}
+
+.navbar__logo--mobile {
+  width: 28.16px;
+  height: 31.87px;
+}
+
+.navbar__logo--desktop {
+  display: none;
+}
+
+.navbar__input {
+  display: inline-flex;
+  flex: 1 1 238px;
+  position: relative;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.navbar__input--icon {
+  padding: 0.5rem;
+}
+
+.navbar__input--search {
+  border: 0;
+  padding: 0.5rem 0.5rem 0.5rem 0;
+  flex: 1;
+  background-color: #1a1a1a;
+}
+
+.navbar__profile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar__profile--notification {
+  fill: var(--primary-text);
+  margin-inline-end: 15px;
+}
+
+.navbar__profile--name {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar__profile--initials {
+  background-color: var(--accent);
+  font-size: var(--extra-small);
+  font-weight: var(--medium);
+  color: var(--secondary-text);
+  border-radius: 6px;
+  padding: 2px;
+  text-transform: uppercase;
+}
+
+.navbar__profile--desktop {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .navbar {
+  }
+
+  .navbar__logo--mobile {
+    display: none;
+  }
+
+  .navbar__logo--desktop {
+    display: block;
+  }
+
+  .navbar__profile {
+  }
+
+  .navbar__profile--name {
+  }
+
+  .navbar__profile--desktop {
+    display: block;
+  }
 }
